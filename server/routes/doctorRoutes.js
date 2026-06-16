@@ -8,13 +8,11 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
-// Ensure uploads directory exists
 const UPLOADS_DIR = path.resolve(__dirname, "../uploads/doctors");
 if (!fs.existsSync(UPLOADS_DIR)) {
   fs.mkdirSync(UPLOADS_DIR, { recursive: true });
 }
 
-// Multer storage configuration
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, UPLOADS_DIR);
@@ -28,7 +26,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Route: POST /api/doctors/register
 router.post(
   "/register",
   upload.fields([
