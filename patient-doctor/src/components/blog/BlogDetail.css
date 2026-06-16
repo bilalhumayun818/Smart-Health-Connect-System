@@ -17,9 +17,3 @@
   object-fit: cover; /* Important for images with various aspect ratios */
 }
 
-/* You can add more specific styling for captions if you uncomment them in JSX */
-/*
-.blog-embedded-image-container p {
-  font-style: italic;
-}
-*/

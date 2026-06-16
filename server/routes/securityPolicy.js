@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const SecurityPolicy = require('../models/SecurityPolicy');
 
-// GET the existing security policy
 router.get('/', async (req, res) => {
   try {
     const policy = await SecurityPolicy.findOne();
@@ -12,7 +11,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST (create/update) the security policy
 router.post('/', async (req, res) => {
   const { policy } = req.body;
   try {
